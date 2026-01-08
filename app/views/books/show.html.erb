@@ -1,0 +1,29 @@
+<h3>Profile</h3>
+<div class="profile_image"    
+    <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+<div class="table">
+    <tr>
+        <th>Name</th>
+        <th><%= @user.name %><th>
+    <tr>
+    <tr>
+        <td>Introduction</td>
+        <td><%= @user.introduction %></td>
+    </tr>
+</div>
+
+<h3>Book</h3>
+<%= form_with model: @book, do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
